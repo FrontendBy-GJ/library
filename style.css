@@ -97,3 +97,37 @@ form {
   justify-content: center;
   gap: 20px;
 }
+
+/* books / main content */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-rows: 1fr;
+  grid-auto-rows: 1fr;
+  justify-content: center;
+  gap: 20px;
+
+  margin: 70px auto;
+  padding: 0px 30px;
+}
+.card {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+
+  background-color: #ef4444;
+  border-radius: 4px;
+  box-shadow: 3px 5px 10px #222;
+  padding: 15px;
+}
+.card-book-title {
+  font-size: 2rem;
+  font-weight: bold;
+  border-bottom: 1px solid currentcolor;
+}
+.card-book-title,
+.card-book-author,
+.card-book-pages {
+  color: #fff;
+  text-shadow: 2px 1px 0 black;
+}
