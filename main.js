@@ -11,13 +11,7 @@ newBookBtn.addEventListener('click', () => {
 });
 
 function newBook() {
-  let myLibrary = [
-    {
-      title: 'The Hobbit',
-      author: 'J.R.R Tolkien',
-      pages: 395,
-    },
-  ];
+  let myLibrary = [];
 
   let books = myLibrary;
 
@@ -60,7 +54,7 @@ function bookReadCheckbox() {
     const currentCard = e.target.parentElement.parentElement;
 
     if (inputParentEl.classList.contains('card') && input.checked) {
-      currentCard.style.backgroundColor = '#65a30d';
+      currentCard.style.backgroundColor = 'green';
     } else {
       currentCard.style.backgroundColor = '';
     }
@@ -79,6 +73,30 @@ function removeBookBtn() {
   });
 
   return removeBtn;
+}
+
+// add book from form
+document.querySelector('form').addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  const title = document.querySelector('#title').value;
+  const author = document.querySelector('#author').value;
+  const pages = document.querySelector('#pages').value;
+
+  const book = new Book(title, author, pages);
+  addBookToCard(book);
+  clearFields();
+  hideForm();
+});
+
+function clearFields() {
+  document.querySelector('#title').value = '';
+  document.querySelector('#author').value = '';
+  document.querySelector('#pages').value = '';
+}
+
+function hideForm() {
+  document.querySelector('.form').style.display = 'none';
 }
 
 newBook();
