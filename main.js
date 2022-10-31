@@ -37,6 +37,34 @@ function addBookToCard(book) {
   `;
 
   container.appendChild(card);
+  card.appendChild(bookReadCheckbox());
+}
+
+// checkbox input
+function bookReadCheckbox() {
+  const read = document.createElement('div');
+  read.setAttribute('class', 'read-checkbox-container');
+  const input = document.createElement('input');
+  input.type = 'checkbox';
+  input.id = 'read';
+
+  read.appendChild(input);
+
+  const label = document.createElement('label');
+  label.innerText = 'Read?';
+  read.appendChild(label);
+
+  input.addEventListener('click', (e) => {
+    const inputParentEl = input.parentElement.parentElement;
+    const currentCard = e.target.parentElement.parentElement;
+
+    if (inputParentEl.classList.contains('card') && input.checked) {
+      currentCard.style.backgroundColor = '#65a30d';
+    } else {
+      currentCard.style.backgroundColor = '';
+    }
+  });
+  return read;
 }
 
 newBook();
