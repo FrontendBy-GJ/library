@@ -41,3 +41,59 @@ header div {
   border-radius: 5px;
   cursor: pointer;
 }
+
+/* form */
+input,
+label {
+  display: block;
+  width: 100%;
+}
+ul {
+  list-style-type: none;
+}
+label {
+  width: 140px;
+  align-self: center;
+}
+li {
+  display: flex;
+}
+li + li {
+  margin-top: 15px;
+}
+input[type='text'],
+input[type='number'] {
+  padding: 2px 10px;
+  background-color: #e5e7eb;
+  border: none;
+  border-radius: 2px;
+}
+input[type='submit'] {
+  padding: 4px 10px;
+  background-color: #65a30d;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #000;
+  cursor: pointer;
+}
+.form {
+  /* display: none; */
+}
+form {
+  width: 300px;
+  min-width: 40vw;
+  height: 200px;
+  margin: 100px auto 0 auto;
+  padding: 0px 15px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 3px 5px 10px #222;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
