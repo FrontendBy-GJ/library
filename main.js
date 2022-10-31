@@ -38,6 +38,7 @@ function addBookToCard(book) {
 
   container.appendChild(card);
   card.appendChild(bookReadCheckbox());
+  card.appendChild(removeBookBtn());
 }
 
 // checkbox input
@@ -65,6 +66,19 @@ function bookReadCheckbox() {
     }
   });
   return read;
+}
+
+// remove book button
+function removeBookBtn() {
+  const removeBtn = document.createElement('button');
+  removeBtn.innerText = 'X';
+  removeBtn.setAttribute('id', 'remove');
+
+  removeBtn.addEventListener('click', (e) => {
+    e.target.parentElement.remove();
+  });
+
+  return removeBtn;
 }
 
 newBook();
