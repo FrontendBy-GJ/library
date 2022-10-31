@@ -127,7 +127,15 @@ form {
 }
 .card-book-title,
 .card-book-author,
-.card-book-pages {
+.card-book-pages,
+.read-checkbox-container {
   color: #fff;
   text-shadow: 2px 1px 0 black;
+}
+.read-checkbox-container {
+  display: flex;
+  gap: 6px;
+}
+#read {
+  width: fit-content;
 }
